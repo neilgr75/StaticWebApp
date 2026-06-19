@@ -3,10 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Registration Form</title>
+    <style>
+        /* General layout settings */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Container box for the form */
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333333;
+            text-align: center;
+        }
+
+        /* Group formatting for vertical layout */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555555;
+        }
+
+        /* Standard text, email, and choice selectors */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        /* Style format for inline choices */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-group input {
+            margin: 0;
+        }
+
+        /* Interactive submit element */
+        button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to your first web page.</p>
+
+<div class="form-container">
+    <h2>Create an Account</h2>
+    
+    <!-- The main data container -->
+    <form action="/submit-path" method="POST">
+        
+        <!-- Text Input -->
+        <div class="form-group">
+            <label for="username">Full Name</label>
+            <input type="text" id="username" name="username" placeholder="John Doe" required>
+        </div>
+
+        <!-- Email Input with browser verification -->
+        <div class="form-group">
+            <label for="useremail">Email Address</label>
+            <input type="email" id="useremail" name="useremail" placeholder="name@example.com" required>
+        </div>
+
+        <!-- Dropdown Selector Selection Menu -->
+        <div class="form-group">
+            <label for="account-type">Account Type</label>
+            <select id="account-type" name="accountType">
+                <option value="personal">Personal</option>
+                <option value="business">Business</option>
+            </select>
+        </div>
+
+        <!-- Large Multiline Field Element -->
+        <div class="form-group">
+            <label for="bio">Short Bio</label>
+            <textarea id="bio" name="userBio" placeholder="Tell us about yourself..."></textarea>
+        </div>
+
+        <!-- Inline Multi-choice Checkbox -->
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms" name="agreeTerms" value="yes" required>
+            <label for="terms">I accept the terms and conditions</label>
+        </div>
+
+        <!-- Submission trigger element -->
+        <button type="submit">Register</button>
+        
+    </form>
+</div>
+
 </body>
 </html>
+
