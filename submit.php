@@ -1,9 +1,9 @@
 <?php
 // Azure SQL connection settings
-$serverName   = "yourserver.database.windows.net"; // e.g. myserver.database.windows.net
-$databaseName = "YourDatabase";
-$username     = "your_user@yourserver";            // for Azure SQL
-$password     = "your_password";
+$serverName   = "ng-test-server.database.windows.net"; // e.g. myserver.database.windows.net
+$databaseName = "NGTestDB";
+$username     = "ng";            // for Azure SQL
+$password     = "Paws7805";
 
 $connectionOptions = array(
     "Database" => $databaseName,
